@@ -12,24 +12,48 @@ crossorigin="anonymous">
 </head>
 <body>
 
-<div class="card mb-3">
-  <img src=".../static/images/cms.jpg" class="card-img-top" th:src="@{images/cms.jpg}" height="200">
+<nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/}">Customer Management System</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a class="nav-link" th:href="@{/addCustomer}">Add Customer</a></li>
+
+            <li><a class="nav-link" th:href="@{/searchCustomer}">Search Customer</a></li>
+
+            <li><a class="nav-link" th:href="@{/logout}">Logout</a></li>    
+        </ul>
+    </div>    
+</nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img th:src="@{images/firstnew.png}" height="200">
+    </div>
+    <div class="carousel-item container-fluid">
+      <img th:src="@{images/second.jpg}" class="img-fluid">
+    </div>
+    <div class="carousel-item container-fluid">
+      <img th:src="@{images/third.jpg}" class="img-fluid">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
-<br/>
-
-<div class="container">
-<div class="row">
-<h1 class="text-center">Customer Management System</h1>
-</div>
-</div>
-
-<br/> <br/>
-<div class="d-grid gap-2 col-6 mx-auto">
-  <a th:href="@{/addCustomer}" class="btn btn-primary btn-sm mb-3" >Add Customer</a>
-  <a th:href="@{/searchCustomer}" class="btn btn-primary btn-sm mb-3" >Search Customer</a>
-  
-</div>
 
 </body>
 </html>

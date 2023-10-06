@@ -35,6 +35,14 @@ public class CustomerController {
 	}
 
 	
+	@GetMapping("/login")
+	public String login()
+	{
+		return "login";
+	}
+
+	
+	
     @GetMapping("/addCustomer")
     public String addCustomer(Model model) {
     	CustomerDto customer = new CustomerDto();
